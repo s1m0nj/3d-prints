@@ -1,2 +1,9 @@
 .DS_Store
 designs/*/out/
+node_modules/
+# Wi-Fi credentials / QR (never publish)
+designs/cabin-wifi-holder/tools/qr.js
+designs/cabin-wifi-holder/qr_matrix.scad
+designs/cabin-wifi-holder/qr_runs.json
+designs/cabin-wifi-holder/WiFi_QR_test.png
+designs/cabin-wifi-holder/print/
