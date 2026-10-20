@@ -12,7 +12,7 @@ plate_w = 50;  plate_h = 95;  plate_t = 3.0;  corner_r = 7;
 // pocket
 rem_w = 43; rem_t = 5; rem_l = 90;
 pocket_w = 46.4;
-pocket_gap = 6.5;
+pocket_gap = 8.5;
 side_wall = 1.8; floor_t = 2.4;
 pocket_top_y = 60;
 wall_top_z = plate_t + pocket_gap;   // 9.5
@@ -70,8 +70,11 @@ module body_A() {
       rounded_slab(plate_t, edge_fillet) outline_full();
       linear_extrude(wall_top_z) outline_low();
     }
-    // pocket
-    translate([-pocket_w / 2, floor_t, plate_t]) cube([pocket_w, pocket_top_y - floor_t + 1, wall_top_z]);
+    // pocket follows the outer corner radius so the wall keeps its thickness there
+    translate([0, 0, plate_t]) linear_extrude(wall_top_z) intersection() {
+      translate([-pocket_w / 2, floor_t]) square([pocket_w, pocket_top_y - floor_t + 1]);
+      offset(delta = -side_wall) outline_low();
+    }
     for (sx = [-1, 1]) translate([sx * screw_x, screw_y, 0]) screw_cut();
   }
 }

@@ -20,12 +20,12 @@ plate_w = 50;  plate_h = 95;  plate_t = 3.0;  corner_r = 7;
 // pocket (inside A)
 rem_w = 43; rem_t = 5; rem_l = 90;            // remote
 pocket_w = 46.4;                              // remote + 1.7 each side
-pocket_gap = 6.5;                             // remote 5 + 1.5 room; overrides the original ">= 7"
+pocket_gap = 8.5;                             // raised from 6.5 after the first print (wall too short)
 side_wall = 1.8; floor_t = 2.4;
 pocket_top_y = 60;                            // panel / walls end here
-wall_top_z = plate_t + pocket_gap;            // 9.5
+wall_top_z = plate_t + pocket_gap;            // 11.5
 // front panel B
-panel_t = 2.0; panel_h = 60;                  // z 9.5 to 11.5, y 0 to 60, same outline as A
+panel_t = 2.0; panel_h = 60;                  // z 11.5 to 13.5, y 0 to 60, same outline as A
 edge_fillet = 1.0;
 // raised black C
 raise = 1.0;                                  // z 11.5 to 12.5
@@ -104,3 +104,8 @@ This produces one object with two parts and correct per-part filament, verified 
 ## Deliverables
 
 Native `.3mf` (or clearly explained fallback), individual STLs, parametric `.scad`, `WiFi_QR_test.png`, short assembly + print-settings notes (only deltas from the default Bambu profile: none expected), a render, and `README.md` for the project folder. Fill in estimated time/filament from the slice. Do not claim physical testing.
+
+## Revision after first print
+
+- Wall 2 mm taller: `pocket_gap` 6.5 to 8.5 (walls and panel z 11.5 to 13.5, QR to 14.5).
+- Pocket corners now follow the outer R7 radius (inset by `side_wall`) instead of a square pocket, which left gaps at the rounded corners.
