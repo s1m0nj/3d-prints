@@ -73,7 +73,7 @@ module body_A() {
     // pocket follows the outer corner radius so the wall keeps its thickness there
     translate([0, 0, plate_t]) linear_extrude(wall_top_z) intersection() {
       translate([-pocket_w / 2, floor_t]) square([pocket_w, pocket_top_y - floor_t + 1]);
-      offset(delta = -side_wall) outline_low();
+      offset(delta = -side_wall) outline_full();
     }
     for (sx = [-1, 1]) translate([sx * screw_x, screw_y, 0]) screw_cut();
   }
