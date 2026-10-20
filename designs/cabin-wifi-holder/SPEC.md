@@ -28,7 +28,7 @@ wall_top_z = plate_t + pocket_gap;            // 11.5
 panel_t = 2.0; panel_h = 60;                  // z 11.5 to 13.5, y 0 to 60, same outline as A
 edge_fillet = 1.0;
 // raised black C
-raise = 1.0;                                  // z 11.5 to 12.5
+raise = 1.0;                                  // z 13.5 to 14.5
 // screws (countersunk, ~4.5 head, ~2.5 shank, ~20 long)
 screw_x = 18; screw_y = 88;                   // 36 apart; 7 in from top and sides, concentric with corner_r
 hole_d = 2.9; csk_d = 4.9;                    // 90 degree cone
